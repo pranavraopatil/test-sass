@@ -26,9 +26,26 @@ header {
   width: 14rem;
   animation: sidebarAnimation 0.7s;
 }
+.container #sidebar .profile__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container #sidebar .profile__container #profile__image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.container #sidebar .profile__container #profile__image.minified {
+  width: 40px;
+  height: 40px;
+}
+.container #sidebar .profile__container #profile__text, .container #sidebar .profile__container #profile__description {
+  margin: 5px;
+}
 .container #sidebar .minifier {
   float: right;
-  margin-right: -24px;
+  margin: 20px -24px 20px 0px;
 }
 .container #sidebar nav {
   display: flex;

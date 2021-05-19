@@ -23,6 +23,11 @@
         <div class="minifier">
           <button id="btn__minifier"><i class="fas fa-list-ul"></i></button>
         </div>
+        <div class="profile__container">
+          <img id="profile__image" src="https://images.unsplash.com/1/type-away.jpg?q=80&fm=jpg&w=400&fit=max"/>
+          <h5 id="profile__text">My Home</h5>
+          <h6 id="profile__description">9898 Trent Bypass</h6>
+        </div>
         <nav>
           <a class="nav-link" title="Overview"
             ><i class="fas fa-house-user"></i
@@ -61,15 +66,24 @@
       const element = document.getElementById("btn__minifier");
       element.addEventListener("click", () => {
         const sidebarElem = document.getElementById("sidebar");
+        const profileTextElem = document.getElementById("profile__text");
+        const profileDescElem = document.getElementById("profile__description");
+        const profileImgElem = document.getElementById("profile__image");
         const isMinified = sidebarElem.classList.contains("minified");
         const navTexts = document.querySelectorAll(".nav__text");
         if (isMinified) {
           sidebarElem.classList.remove("minified");
+          profileImgElem.classList.remove("minified");
+          profileTextElem.classList.remove("displaynone");
+          profileDescElem.classList.remove("displaynone");
           navTexts.forEach((item) => {
             item.classList.remove("displaynone");
           });
         } else {
           sidebarElem.classList.add("minified");
+          profileImgElem.classList.add("minified");
+          profileTextElem.classList.add("displaynone");
+          profileDescElem.classList.add("displaynone");
           navTexts.forEach((item) => {
             item.classList.add("displaynone");
           });
