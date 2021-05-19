@@ -4,4 +4,71 @@ html {
   padding: 0;
   width: 100%;
   height: 100%;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  background-color: #242c43;
+  color: #e5e7e7;
+}
+
+header {
+  height: 3rem;
+  font-size: 32px;
+}
+
+.container {
+  display: flex;
+}
+.container #sidebar {
+  transform: translateY(30px);
+  transition: width 0.5s ease-out;
+  color: #6b7a8a;
+  width: 14rem;
+  animation: sidebarAnimation 0.7s;
+}
+.container #sidebar .minifier {
+  float: right;
+  margin-right: -24px;
+}
+.container #sidebar nav {
+  display: flex;
+  flex-direction: column;
+}
+.container #sidebar nav .nav-link {
+  padding: 20px;
+  transition: color 0.6s;
+}
+.container #sidebar nav .nav-link i {
+  margin: 0px 10px;
+}
+.container #sidebar nav .nav-link:hover {
+  color: #288bee;
+  background-color: #181e2e;
+}
+.container #sidebar nav .nav-link.nav-selected {
+  border-left: 5px solid #288bee;
+  color: #288bee;
+  background-color: #181e2e;
+}
+.container #sidebar.minified {
+  width: 5rem;
+}
+.container main {
+  padding: 30px;
+  flex: 1;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes sidebarAnimation {
+  from {
+    margin-top: -200px;
+  }
+  to {
+    margin-top: 0px;
+  }
+}
+.displaynone {
+  display: none;
 }

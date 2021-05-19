@@ -6,10 +6,75 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="index.css" />
     <title>Cadent Front-end - Style Aptitude Test</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/b0838ee04b.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <div>
-      <span>Your clients are counting on you!</span>
+    <header>Logo</header>
+    <div class="container">
+      <aside id="sidebar">
+        <div class="minifier">
+          <button id="btn__minifier"><i class="fas fa-list-ul"></i></button>
+        </div>
+        <nav>
+          <a class="nav-link" title="Overview"
+            ><i class="fas fa-house-user"></i
+            ><span class="nav__text">Overview</span></a
+          >
+          <a class="nav-link nav-selected" title="Analytics"
+            ><i class="fas fa-chart-line"></i
+            ><span class="nav__text">Analytics</span></a
+          >
+          <a class="nav-link" title="Devices"
+            ><i class="fas fa-laptop-house"></i
+            ><span class="nav__text">Devices</span></a
+          >
+          <a class="nav-link" title="Rules"
+            ><i class="fas fa-clipboard"></i
+            ><span class="nav__text">Rules</span></a
+          >
+          <a class="nav-link" title="Gallery"
+            ><i class="fas fa-images"></i
+            ><span class="nav__text">Gallery</span></a
+          >
+          <a class="nav-link" title="History"
+            ><i class="fas fa-undo"></i
+            ><span class="nav__text">History</span></a
+          >
+          <a class="nav-link" title="Setting"
+            ><i class="fas fa-cog"></i><span class="nav__text">Setting</span></a
+          >
+        </nav>
+      </aside>
+      <main id="maincontent">
+        <p>Main Content</p>
+      </main>
     </div>
+    <script>
+      const element = document.getElementById("btn__minifier");
+      element.addEventListener("click", () => {
+        const sidebarElem = document.getElementById("sidebar");
+        const isMinified = sidebarElem.classList.contains("minified");
+        const navTexts = document.querySelectorAll(".nav__text");
+        if (isMinified) {
+          sidebarElem.classList.remove("minified");
+          navTexts.forEach((item) => {
+            item.classList.remove("displaynone");
+          });
+        } else {
+          sidebarElem.classList.add("minified");
+          navTexts.forEach((item) => {
+            item.classList.add("displaynone");
+          });
+        }
+      });
+    </script>
   </body>
 </html>
